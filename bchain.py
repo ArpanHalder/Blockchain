@@ -78,9 +78,3 @@ class Chain():
         return flag
     
    
-    def get_root(self, chain_2):
-        min_chain_size = min(self.get_chain_size(), chain_2.get_chain_size())
-        for i in range(1,min_chain_size+1):
-            if self.blocks[i] != chain_2.blocks[i]:
-                return self.fork(i-1)
-        return self.fork(min_chain_size)
